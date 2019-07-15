@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	app:layout_behavior="@string/appbar_scrolling_view_behavior"
-	tools:context=".MondayClass"
-	tools:showIn="@layout/activity_monday_class">
+	android:paddingLeft="0dp"
+	android:paddingRight="0dp"
+	android:orientation="vertical" >
 
-</android.support.constraint.ConstraintLayout>
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.AppBarOverlay">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+	</android.support.design.widget.AppBarLayout>
+	<EditText
+		android:id="@+id/text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="Text" />
+	<Button
+		android:id="@+id/button_plus"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:text="+" />
+	<Button
+		android:id="@+id/button_minus"
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:text="-" />
+</LinearLayout>

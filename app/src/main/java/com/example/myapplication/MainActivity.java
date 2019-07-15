@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 		});
 
 
-		FloatingActionButton fab = findViewById(R.id.tawsif);
+		FloatingActionButton fab = findViewById(R.id.fab);
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 						.setAction("Action", null).show();
 				//Start new activity class
 
-//				Intent intent = new Intent(MainActivity.this, MondayClass.class);
-//				startActivity(intent);
+				Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+				startActivity(intent);
 
 			}
 		});
