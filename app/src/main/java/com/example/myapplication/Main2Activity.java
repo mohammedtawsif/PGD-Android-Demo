@@ -1,13 +1,16 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,13 +28,17 @@ public class Main2Activity extends AppCompatActivity {
 		FloatingActionButton fab = findViewById(R.id.fab);
 
 		final TextView counter = findViewById(R.id.text_view);
+		final EditText editText = findViewById(R.id.text_edit);
+
 
 		Button minusButton = findViewById(R.id.button_minus);
 		minusButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				count = count - 1;
-				counter.setText( count + "");
+				Editable editable = editText.getText();
+				int value = Integer.parseInt(editable.toString());;
+				count = count - value;
+				editText.setText(  null);
 			}
 		});
 
@@ -41,12 +48,21 @@ public class Main2Activity extends AppCompatActivity {
 		plusButton.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				count = count + 1 ;
+				count = count + Integer.parseInt(editText.getText().toString()); ;
 
-				counter.setText( count + "");
+				editText.setText(  null);
+
 			}
 		});
 
+
+		Button equal = findViewById(R.id.button_equal);
+		equal.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				counter.setText( count + "");
+			}
+		});
 
 
 	}
