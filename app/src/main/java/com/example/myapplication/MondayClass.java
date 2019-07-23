@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MondayClass extends AppCompatActivity {
 
-	TextView textView ;
+	TextView text2View ;
 	Button plus;
 	Button minus;
 
