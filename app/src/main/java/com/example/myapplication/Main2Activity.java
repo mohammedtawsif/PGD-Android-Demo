@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -25,10 +26,16 @@ public class Main2Activity extends AppCompatActivity {
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
+
 		FloatingActionButton fab = findViewById(R.id.fab);
 
 		final TextView counter = findViewById(R.id.text_view);
 		final EditText editText = findViewById(R.id.text_edit);
+		final TextView prevText = findViewById(R.id.prev_text);
+
+		int previousText = getIntent().getIntExtra("Text", 0);
+
+		Log.e("DEFAULT VALUE", previousText + "");
 
 
 		Button minusButton = findViewById(R.id.button_minus);
@@ -61,6 +68,11 @@ public class Main2Activity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				counter.setText( count + "");
+
+				Intent data = new Intent();
+				data.putExtra("Result", count + "");
+				setResult(Activity.RESULT_CANCELED);
+				finish();
 			}
 		});
 

@@ -8,6 +8,13 @@
 	android:orientation="vertical" >
 
 	<TextView
+		android:id="@+id/prev_text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:textSize="32sp"
+		android:hint="Counter Text" />
+
+	<TextView
 		android:id="@+id/text_view"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
